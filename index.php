@@ -1,0 +1,1 @@
+<?php include 'pages/layouts/app.php'?>
