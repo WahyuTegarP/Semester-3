@@ -1,5 +1,5 @@
 <?php
-require "conn.php";
+require "connection/conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -39,6 +39,24 @@ require "conn.php";
                 document.getElementById("total_harga").innerText = "Total Harga: Rp " + total_harga.toLocaleString();
             }
         </script>
+        <style>
+        body {
+            display: flex;
+            justify-content: center; /* Mengatur posisi horizontal */
+            align-items: center; /* Mengatur posisi vertikal */
+            height: 100vh; /* Mengatur tinggi body */
+            margin: 0; /* Menghilangkan margin default */
+            background-color: #f0f0f0; /* Warna latar belakang */
+        }
+
+        .form-container {
+            background-color: white; /* Warna latar belakang form */
+            padding: 20px; /* Ruang di dalam form */
+            border-radius: 8px; /* Sudut membulat */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+            width: 300px; /* Lebar form */
+        }     
+        </style>
     </head>
     <body>
         <form action="" method="post">
@@ -83,6 +101,6 @@ require "conn.php";
                     <option value="Transfer">Transfer</option>
                 </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Sewa</button>
+                <button type="submit" class="btn btn-primary" onclick="window.location.href='transaksi.php'">Sewa</button>
     </body>
 </html>
