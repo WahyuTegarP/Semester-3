@@ -46,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex justify-content-between">
                     <h2 class="m-0 font-weight-bold text-primary">Daftar Kamera</h2>
-                    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#addDataModal">
+                    <a href="tambah_data.php" class="btn btn-sm btn-success">
                         <i class="fas fa-plus"></i> Tambah Data
-                    </button>
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
