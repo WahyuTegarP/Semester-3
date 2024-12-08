@@ -3,7 +3,7 @@
         <!-- Tabel Alat -->
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Daftar Alat</h6>
+                <h2 class="m-0 font-weight-bold text-primary">Daftar Alat</h2>
                 <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#addDataModal">
                     <i class="fas fa-plus"></i> Tambah Data
                 </button>
@@ -23,8 +23,8 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Kamera DSLR</td>
-                                <td>Fotografi</td>
+                                <td>Stabilizer</td>
+                                <td>Alat</td>
                                 <td>Tersedia</td>
                                 <td>
                                     <button class="btn btn-sm btn-primary">Detail</button>
@@ -35,7 +35,7 @@
                             <tr>
                                 <td>2</td>
                                 <td>Tripod</td>
-                                <td>Aksesori</td>
+                                <td>Alat</td>
                                 <td>Tidak Tersedia</td>
                                 <td>
                                     <button class="btn btn-sm btn-primary">Detail</button>
@@ -45,8 +45,8 @@
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Drone</td>
-                                <td>Videografi</td>
+                                <td>Light Stand</td>
+                                <td>Alat</td>
                                 <td>Tersedia</td>
                                 <td>
                                     <button class="btn btn-sm btn-primary">Detail</button>

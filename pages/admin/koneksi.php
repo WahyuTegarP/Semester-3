@@ -1,16 +1,15 @@
 <?php
-// Menyertakan file koneksi
-include('koneksi.php');
+// koneksi.php
+$host = 'localhost'; // Nama host
+$user = 'root'; // Username database
+$password = '1234'; // Password database (kosong jika default)
+$database = 'db_sewakamera'; // Nama database
 
-// Query untuk mengambil data dari tabel
-$sql = "SELECT * FROM alat"; // Ganti dengan tabel yang ada di database kamu
-$result = $conn->query($sql);
+// Membuat koneksi
+$koneksi = new mysqli($host, $user, $password, $database);
 
-// Mengecek apakah ada data yang ditemukan
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "Nama Alat: " . $row["nama_alat"] . "<br>"; // Ganti dengan nama kolom yang sesuai
-    }
-} else {
-    echo "Tidak ada data";
+// Periksa koneksi
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
 }
+?>
