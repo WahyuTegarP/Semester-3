@@ -149,7 +149,7 @@ if ($result->num_rows > 0) {
             <tr>
                 <th class="text-light bg-primary">Id</th>
                 <th class="text-light bg-primary">Tanggal</th>
-                <th class="text-light bg-primary">Kategori</th>
+                <th class="text-light bg-primary">Kerusakan</th>
                 <th class="text-light bg-primary">Nama Barang</th>
                 <th class="text-light bg-primary">Jumlah</th>
                 <th class="text-light bg-primary">Metode Pembayaran</th>
