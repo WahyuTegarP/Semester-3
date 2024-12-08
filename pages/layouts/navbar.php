@@ -7,17 +7,47 @@
   </button>
 
   <!-- Topbar Search -->
-  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-    <div class="input-group">
-      <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search"
-        aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button class="btn btn-primary" type="button">
-          <i class="fas fa-search fa-sm"></i>
-        </button>
-      </div>
-    </div>
-  </form>
+  <h5 class="judul">BiruHijauProduction</h5>
+
+<style>
+    .judul {
+        font-family: 'Arial', sans-serif; /* Menggunakan font yang lebih halus dan modern */
+        font-size: 30px; /* Ukuran font lebih besar agar lebih menonjol */
+        font-weight: 600; /* Ketebalan font untuk tampilan tegas namun elegan */
+        text-align: left; /* Teks rata kiri */
+        color: #333; /* Warna dasar teks gelap untuk kontras yang baik */
+        letter-spacing: 2px; /* Sedikit jarak antar huruf untuk memberi kesan rapi */
+        line-height: 1.4; /* Jarak antar baris lebih teratur */
+        padding-left: 25px; /* Memberikan ruang di sisi kiri untuk memberi keseimbangan */
+        margin: 0; /* Menghapus margin default agar lebih rata */
+    }
+
+    .judul span:nth-child(1) {
+        color: #28a745; /* Warna biru untuk 'Biru' */
+    }
+
+    .judul span:nth-child(2) {
+        color: #007bff ; /* Warna hijau untuk 'Hijau' */
+    }
+
+    .judul span:nth-child(3) {
+        color: #ffffff; /* Warna putih untuk 'Production' */
+        background-color: #28a745; /* Latar belakang biru untuk 'Production' */
+        padding: 0 14px; /* Padding lebih lebar agar teks terlihat lebih nyaman */
+        border-radius: 20px; /* Sudut yang lebih melengkung untuk kesan lembut */
+    }
+</style>
+
+<script>
+    // Memecah teks menjadi beberapa bagian
+    const judul = document.querySelector('.judul');
+    const teks = 'BiruHijauProduction';
+    const html = teks.split(/(?=[A-Z])/).map((word, index) => {
+        return `<span>${word}</span>`;
+    }).join('');
+    judul.innerHTML = html;
+</script>
+
 
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
@@ -181,7 +211,7 @@
           Activity Log
         </a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+        <a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#logoutModal">
           <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
           Logout
         </a>
