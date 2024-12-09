@@ -1,4 +1,4 @@
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/IMG_6698.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url('assets/user/images/IMG_6698.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
@@ -109,7 +109,7 @@
     				<div class="carousel-car owl-carousel">
     					<div class="item">
     						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/A7_3.jpg);">
+		    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/A7_3.jpg);">
 		    					</div>
 		    					<div class="text">
 		    						<h2 class="mb-0"><a href="#">Sony A7 Mark III</a></h2>
@@ -123,7 +123,7 @@
     					</div>
     					<div class="item">
     						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/A7_2.jpg);">
+		    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/A7_2.jpg);">
 		    					</div>
 		    					<div class="text">
 		    						<h2 class="mb-0"><a href="#">Sony A7 Mark II</a></h2>
@@ -137,7 +137,7 @@
     					</div>
     					<div class="item">
     						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/A6400.jpg);">
+		    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/A6400.jpg);">
 		    					</div>
 		    					<div class="text">
 		    						<h2 class="mb-0"><a href="#">Sony A6400</a></h2>
@@ -151,7 +151,7 @@
     					</div>
     					<div class="item">
     						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/FX_30.jpg);">
+		    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/FX_30.jpg);">
 		    					</div>
 		    					<div class="text">
 		    						<h2 class="mb-0"><a href="#">Sony FX 30</a></h2>
@@ -172,7 +172,7 @@
     <section class="ftco-section ftco-about">
 			<div class="container">
 				<div class="row no-gutters">
-					<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/IMG_6698.jpg);">
+					<div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url('assets/user/images/IMG_6698.jpg);">
 					</div>
 					<div class="col-md-6 wrap-about ftco-animate">
 	          <div class="heading-section heading-section-white pl-md-5">
@@ -237,7 +237,7 @@
 			</div>
 		</section>
 
-		<section class="ftco-section ftco-intro" style="background-image: url(images/IMG_6702.jpg);">
+		<section class="ftco-section ftco-intro" style="background-image: url('assets/user/images/IMG_6702.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row justify-content-end">
@@ -263,7 +263,7 @@
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item">
                 <div class="testimony-wrap rounded text-center py-4 pb-5">
-                  <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-2" style="background-image: url('assets/user/images/person_1.jpg)">
                   </div>
                   <div class="text pt-4">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -274,7 +274,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap rounded text-center py-4 pb-5">
-                  <div class="user-img mb-2" style="background-image: url(images/ini_bapak.jpg)">
+                  <div class="user-img mb-2" style="background-image: url('assets/user/images/ini_bapak.jpg)">
                   </div>
                   <div class="text pt-4">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -285,7 +285,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap rounded text-center py-4 pb-5">
-                  <div class="user-img mb-2" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-2" style="background-image: url('assets/user/images/person_3.jpg)">
                   </div>
                   <div class="text pt-4">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -296,7 +296,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap rounded text-center py-4 pb-5">
-                  <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-2" style="background-image: url('assets/user/images/person_1.jpg)">
                   </div>
                   <div class="text pt-4">
                     <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -323,7 +323,7 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('assets/user/images/image_1.jpg');">
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
@@ -338,7 +338,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('assets/user/images/image_2.jpg');">
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
@@ -353,7 +353,7 @@
           </div>
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('assets/user/images/image_3.jpg');">
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">

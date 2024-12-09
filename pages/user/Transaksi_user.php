@@ -62,8 +62,8 @@
                 <div class="mb-3">
                     <label class="form-label">Produk</label>
                     <select name="item" class="Produk" required>
-                        <option value="Camera">Sony A7 Mark III</option>
-                        <option value="Camera">Sony A7 Mark II</option>
+                        <option value="Ca   mera">Sony A7 Mark III</option>
+                        <option value="Camera">Sony A7 Mark II</    option>
                         <option value="Camera">Sony A6400</option>
                         <option value="Camera">Sony FX30</option>
                         <option value="Lens">Lensa Sony 50mm FE F1.8</option>

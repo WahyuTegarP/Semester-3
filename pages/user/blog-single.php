@@ -1,4 +1,4 @@
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/IMG_6698.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('assets/user/images/IMG_6698.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -129,7 +129,7 @@
             <div class="sidebar-box ftco-animate">
               <h3>Recent Blog</h3>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/IMG_6704.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url('assets/user/images/IMG_6704.jpg);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
                   <div class="meta">
@@ -140,7 +140,7 @@
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/IMG_6698.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url('assets/user/images/IMG_6698.jpg);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
                   <div class="meta">
@@ -151,7 +151,7 @@
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/IMG_6691.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url('assets/user/images/IMG_6691.jpg);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
                   <div class="meta">

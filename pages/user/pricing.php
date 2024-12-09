@@ -1,5 +1,5 @@
 
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/IMG_6698.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('assets/user/images/IMG_6698.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -28,7 +28,7 @@
 						    </thead>
 						    <tbody>
 						      <tr class="">
-						      	<td class="car-image"><div class="img" style="background-image:url(images/A7_3.jpg);"></div></td>
+						      	<td class="car-image"><div class="img" style="background-image: url('assets/user/images/A7_3.jpg');"></div></td>
 						        <td class="product-name">
 						        	<h3>Sony A7 Mark III</h3>
 						        	<p class="mb-0 rated">
@@ -79,7 +79,7 @@
 						      </tr><!-- END TR-->
 
 						      <tr class="">
-						      	<td class="car-image"><div class="img" style="background-image:url(images/A7_2.jpg);"></div></td>
+						      	<td class="car-image"><div class="img" style="background-image: url('assets/user/images/A7_2.jpg');"></div></td>
 						        <td class="product-name">
 						        	<h3>Sony A7 Mark II</h3>
 						        	<p class="mb-0 rated">
@@ -130,7 +130,7 @@
 						      </tr><!-- END TR-->
 
 						      <tr class="">
-						      	<td class="car-image"><div class="img" style="background-image:url(images/A6400.jpg);"></div></td>
+						      	<td class="car-image"><div class="img" style="background-image: url('assets/user/images/A6400.jpg');"></div></td>
 						        <td class="product-name">
 						        	<h3>Sony A6400</h3>
 						        	<p class="mb-0 rated">
@@ -181,7 +181,7 @@
 						      </tr><!-- END TR-->
 
 						      <tr class="">
-						      	<td class="car-image"><div class="img" style="background-image:url(images/DJIRS3Mini.jpg);"></div></td>
+						      	<td class="car-image"><div class="img" style="background-image: url('assets/user/images/DJIRS3Mini.jpg');"></div></td>
 						        <td class="product-name">
 						        	<h3>Gimbal DJI RS 3 Mini</h3>
 						        	<p class="mb-0 rated">
@@ -233,7 +233,7 @@
 
 
 						      <tr class="">
-						      	<td class="car-image"><div class="img" style="background-image:url(images/FeiyuScorpPro.jpg);"></div></td>
+						      	<td class="car-image"><div class="img" style="background-image: url('assets/user/images/FeiyuScorpPro.jpg');"></div></td>
 						        <td class="product-name">
 						        	<h3>Gimbal Feiyu Scorp Pro</h3>
 						        	<p class="mb-0 rated">
@@ -285,7 +285,7 @@
 
 
 						      <tr class="">
-						      	<td class="car-image"><div class="img" style="background-image:url(images/Sony50mm.jpg);"></div></td>
+						      	<td class="car-image"><div class="img" style="background-image: url('assets/user/images/Sony50mm.jpg');"></div></td>
 						        <td class="product-name">
 						        	<h3>Lensa Sony 50MM FE 1.8</h3>
 						        	<p class="mb-0 rated">
