@@ -28,6 +28,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Harap lengkapi semua data!');</script>";
     }
 }
+
+// Proses hapus data
+if (isset($_GET['hapus'])) {
+    $product_id = $_GET['hapus'];
+    $sqlHapus = "DELETE FROM product WHERE product_id = ?";
+    $stmt = $koneksi->prepare($sqlHapus);
+    $stmt->bind_param("i", $product_id);
+    if ($stmt->execute()) {
+        echo "<script>alert('Data berhasil dihapus!'); window.location.href='kamerainpt.php';</script>";
+    } else {
+        echo "<script>alert('Gagal menghapus data: " . $koneksi->error . "');</script>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             <td>
                                                 <button class="btn btn-sm btn-primary">Detail</button>
                                                 <button class="btn btn-sm btn-warning">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Hapus</button>
+                                                <a href="?hapus=<?= $row['product_id']; ?>" class="btn btn-sm btn-danger">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endwhile;

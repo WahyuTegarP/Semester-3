@@ -10,17 +10,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //memvalidasi
     if (!empty($nama_product) && !empty($kategori) && !empty($harga_sewa) && !empty($status_produk)) {
-        //menambahkan data baru
-        $sqlInsert = "INSERT INTO product (nama_product, kategori, harga_sewa, status_prodct)
-        VALUES ('$nama_product', '$kategori', '$harga_sewa', '$status_produk')";
+        $sqlInsert = "INSERT INTO product (nama_product, kategori, harga_sewa, status_produk)
+        VALUES (?, ?, ?, ?)";
+        $stmt = $koneksi->prepare($sqlInsert);
+        $stmt->bind_param("ssss", $nama_product, $kategori, $harga_sewa, $status_produk);
+        if ($stmt->execute()) {
+            echo "<script>alert('Data berhasil disimpan!'); window.location.href='kamerainpt.php';</script>";
+        } else {
+            echo "<script>alert('Gagal menambahkan data: " . $koneksi->error . "');</script>";
+        }
     }
-    if ($koneksi->query($sqlInsert)){
-        echo "<script>alert('Data berhasil disimpan!'); window.location.href='kamerainpt.php';</script>";
-    }else{
-        echo "<script>alert('Gagal menambahkan data: " . $koneksi->error . "');</script>";
-    }
-}else{
-    echo "<script>alert('Harap lengkapi semua data!');</script>";
 }
 // Cek apakah $sqlInsert sudah didefinisikan
 if (isset($sqlInsert)) {
