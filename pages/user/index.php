@@ -327,12 +327,12 @@
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
-                  <div><a href="#">Oct. 29, 2019</a></div>
+                  <div><a href="#">29 November 2024</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+                <h3 class="heading mt-2"><a href="#">Lokasi yang bernuansa alam dengan dataran tinggi dan udara yang masih segar.</a></h3>
+                <p><a href="#" class="btn btn-primary">Baca selengkapnya</a></p>
               </div>
             </div>
           </div>
@@ -342,12 +342,12 @@
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
-                  <div><a href="#">Oct. 29, 2019</a></div>
+                  <div><a href="#">12 Desember 2024</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+                <h3 class="heading mt-2"><a href="#">Ruangan admin dan tempat tunggu luas</a></h3>
+                <p><a href="#" class="btn btn-primary">Baca selengkapnya</a></p>
               </div>
             </div>
           </div>
@@ -357,12 +357,12 @@
               </a>
               <div class="text pt-4">
               	<div class="meta mb-3">
-                  <div><a href="#">Oct. 29, 2019</a></div>
+                  <div><a href="#">10 November 2024</a></div>
                   <div><a href="#">Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
-                <p><a href="#" class="btn btn-primary">Read more</a></p>
+                <h3 class="heading mt-2"><a href="#">Lokasi Studio dan Persewaan</a></h3>
+                <p><a href="#" class="btn btn-primary">Baca selengkapnya</a></p>
               </div>
             </div>
           </div>

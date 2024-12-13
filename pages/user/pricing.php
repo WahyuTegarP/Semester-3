@@ -5,7 +5,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
           <div class="col-md-9 ftco-animate pb-5">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Pricing <i class="ion-ios-arrow-forward"></i></span></p>
-            <h1 class="mb-3 bread">Pricing</h1>
+            <h1 class="mb-3 bread">Sewa</h1>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 350.000</span>
@@ -54,7 +54,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 250.000</span>
@@ -66,7 +66,7 @@
 						        </td>
 
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 150.000</span>
@@ -93,7 +93,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</smal> 250.000</span>
@@ -105,7 +105,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 150.000</span>
@@ -117,7 +117,7 @@
 						        </td>
 
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 125.000</span>
@@ -144,7 +144,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 175.000</span>
@@ -156,7 +156,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 125.000</span>
@@ -168,7 +168,7 @@
 						        </td>
 
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 90.000</span>
@@ -195,7 +195,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 125.000</span>
@@ -207,7 +207,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 100.000</span>
@@ -219,7 +219,7 @@
 						        </td>
 
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 90.000</span>
@@ -247,7 +247,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 190.000</span>
@@ -259,7 +259,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 150.000</span>
@@ -271,7 +271,7 @@
 						        </td>
 
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 125.000</span>
@@ -299,7 +299,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 125.000</span>
@@ -311,7 +311,7 @@
 						        </td>
 						        
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 100.000</span>
@@ -323,7 +323,7 @@
 						        </td>
 
 						        <td class="price">
-						        	<p class="btn-custom"><a href="#">Ayo Rental</a></p>
+						        	<p class="btn-custom"><a href="?hal=Transaksi_user">Ayo Rental</a></p>
 						        	<div class="price-rate">
 							        	<h3>
 							        		<span class="num"><smal class="currency">Rp.</small> 90.000</span>

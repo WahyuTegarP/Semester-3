@@ -56,7 +56,7 @@
 	<div class="col-md-3">
 		<div class="services services-2 w-100 text-center">
 			<div class="icon d-flex align-items-center justify-content-center">
-				<img src="images/prewedding-icon.jpg" alt="Prewedding Icon" class="rounded-img">
+				<img src="assets/user/images/wedding-couple.png" alt="Prewedding Icon" class="rounded-img">
 			</div>
 			<div class="text w-100">
 				<h3 class="heading mb-2">Prewedding</h3>
@@ -73,8 +73,8 @@
 			<div class="container">
 				<div class="row justify-content-end">
 					<div class="col-md-6 heading-section heading-section-white ftco-animate">
-            <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
-            <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
+            <h2 class="mb-3">Mau moment bahagiamu menjadi nyata?</h2>
+            <a href="?hal=Transaksi_user" class="btn btn-primary btn-lg">Ayo reservasi disini.</a>
           </div>
 				</div>
 			</div>

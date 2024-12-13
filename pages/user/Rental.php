@@ -20,12 +20,12 @@
     					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/A7_3.jpg');">
     					</div>
     					<div class="text">
-    						<h2 class="mb-0"><a href="camera-single.php">Kamera Sony A7 Mark III</a></h2>
+    						<h2 class="mb-0"><a href="?hal=camera_single">Kamera Sony A7 Mark III</a></h2>
     						<div class="d-flex mb-3">
 	    						<span class="cat">Sony FE-Camera</span>
 	    						<p class="price ml-auto">Rp. 350.000 <span>/day</span></p>
     						</div>
-    						<p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="camera-single.php" class="btn btn-secondary py-2 ml-1">Details</a></p>
+    						<p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="?hal=camera_single" class="btn btn-secondary py-2 ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
@@ -34,12 +34,12 @@
     					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/A7_2.jpg');">
     					</div>
     					<div class="text">
-    						<h2 class="mb-0"><a href="car-single.html">Kamera Sony A7 Mark II</a></h2>
+    						<h2 class="mb-0"><a href="?hal=camera_singleA7_II">Kamera Sony A7 Mark II</a></h2>
     						<div class="d-flex mb-3">
 	    						<span class="cat">Sony FE-Camera</span>
 	    						<p class="price ml-auto">Rp. 250.000 <span>/day</span></p>
     						</div>
-    						<p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="camera-single A7-II.php" class="btn btn-secondary py-2 ml-1">Details</a></p>
+    						<p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="?hal=camera_singleA7_II" class="btn btn-secondary py-2 ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
@@ -48,12 +48,12 @@
     					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/A6400.jpg');">
     					</div>
     					<div class="text">
-    						<h2 class="mb-0"><a href="camera-single A6400.php">Kamera Sony A6400</a></h2>
+    						<h2 class="mb-0"><a href="?hal=camera_single_A6400">Kamera Sony A6400</a></h2>
     						<div class="d-flex mb-3">
 	    						<span class="cat">Sony E-Camera</span>
 	    						<p class="price ml-auto">Rp. 175.000 <span>/day</span></p>
     						</div>
-    						<p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="camera-single A6400.php" class="btn btn-secondary py-2 ml-1">Details</a></p>
+    						<p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="?hal=camera_single_A6400" class="btn btn-secondary py-2 ml-1">Details</a></p>
     					</div>
     				</div>
     			</div>
