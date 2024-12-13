@@ -5,9 +5,9 @@
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
       <div class="col-md-9 ftco-animate pb-5">
         <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                class="ion-ios-arrow-forward"></i></a></span> <span>About us <i
+                class="ion-ios-arrow-forward"></i></a></span> <span>Tentang Kami <i
               class="ion-ios-arrow-forward"></i></span></p>
-        <h1 class="mb-3 bread">About Us</h1>
+        <h1 class="mb-3 bread">Tentang Kami</h1>
       </div>
     </div>
   </div>
@@ -21,17 +21,16 @@
       </div>
       <div class="col-md-6 wrap-about ftco-animate">
         <div class="heading-section heading-section-white pl-md-5">
-          <span class="subheading">About us</span>
+          <span class="subheading">Tentang Kami</span>
           <h2 class="mb-4">Welcome to Our Studio</h2>
 
-          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-            paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-          <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have
-            been rewritten a thousand times and everything that was left from its origin would be the word "and" and the
-            Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by
-            their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted
-            parts of sentences fly into your mouth.</p>
-          <p><a href="#" class="btn btn-primary py-3 px-4">Search Vehicle</a></p>
+          <p>Sebuah lokasi kecil bernama Rembangan yang terletak di dekat Kecamatan Patrang, 
+            Desa Baratan dan menyediakan berbagai kebutuhan untuk produksi Anda. 
+            Ini adalah tempat yang mudah dan lengkap untuk menemani kegiatan produksi Anda.</p>
+          <p>Sebuah tempat yang direkomendasikan kepada masyarakat untuk dipercaya menyediakan hasil momen renungan berupa kamera yang siap menemani momen Anda dalam setiap perjalanan atau cerita dalam hidup. 
+            Kami menyediakan peralatan produksi untuk menemani setiap langkah momen Anda. Jangan ragu untuk menyewa peralatan dari kami. 
+            Kami siap menemani Anda dalam setiap langkah apapun yang Anda inginkan.</p>
+          <p><a href="#" class="btn btn-primary py-3 px-4">Cari kamera</a></p>
         </div>
       </div>
     </div>
@@ -43,8 +42,9 @@
   <div class="container">
     <div class="row justify-content-end">
       <div class="col-md-6 heading-section heading-section-white ftco-animate">
-        <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
-        <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
+        <h2 class="mb-3">Tunggu apa lagi? segera sewa alat dari kami.
+        </h2>
+        <a href="#" class="btn btn-primary btn-lg">Saya ingin rental</a>
       </div>
     </div>
   </div>

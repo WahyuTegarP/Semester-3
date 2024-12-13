@@ -170,10 +170,10 @@
     			</div>
     			<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/A6400.jpg');">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/SonyE16mm_miring.jpg');">
     					</div>
     					<div class="text">
-    						<h2 class="mb-0"><a href="car-single.html">Sony A6400</a></h2>
+    						<h2 class="mb-0"><a href="car-single.html">Lensa Sony Sigma 16mm F1.4 E Mount </a></h2>
     						<div class="d-flex mb-3">
 	    						<span class="cat">Sony</span>
 	    						<p class="price ml-auto">Rp. 175.000 <span>/hari</span></p>

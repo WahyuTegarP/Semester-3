@@ -146,7 +146,7 @@
 
     			<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/dji-mini-2.jpg');">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/dji-mini-2.jpeg');">
     					</div>
     					<div class="text">
     						<h2 class="mb-0"><a href="car-single.html">Drone DJI "Mavic Mini 2</a></h2>
@@ -174,7 +174,7 @@
     			</div>
     			<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/SonyFE35mmF1.8.jpg');">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/SonyFE35mmF1.8-miring.jpg');">
     					</div>
     					<div class="text">
     						<h2 class="mb-0"><a href="car-single.html">Lensa Sony 35mm E Mount F1.8</a></h2>
@@ -188,7 +188,7 @@
     			</div>
 				<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/SonyFE28-70mm.jpg');">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/SonyFE28-70mm-miring.jpg');">
     					</div>
     					<div class="text">
     						<h2 class="mb-0"><a href="car-single.html">Lensa Sony 28-70MM FE Mount F1.8</a></h2>
@@ -202,7 +202,7 @@
     			</div>
 				<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/SonyE16mm.jpg');">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/SonyE16mm_miring.jpg');">
     					</div>
     					<div class="text">
     						<h2 class="mb-0"><a href="car-single.html">Lensa Sony Sigma 16mm E Mount F1.4</a></h2>
@@ -216,7 +216,7 @@
     			</div>
 				<div class="col-md-4">
     				<div class="car-wrap rounded ftco-animate">
-    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/sony_fe_85mm_f1.8.jpg');">
+    					<div class="img rounded d-flex align-items-end" style="background-image: url('assets/user/images/sony_fe_85mm_f1.8-miring.jpg');">
     					</div>
     					<div class="text">
     						<h2 class="mb-0"><a href="car-single.html">Lensa Sony 85mm FE Mount F1.8</a></h2>
