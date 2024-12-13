@@ -30,7 +30,7 @@
           <p>Sebuah tempat yang direkomendasikan kepada masyarakat untuk dipercaya menyediakan hasil momen renungan berupa kamera yang siap menemani momen Anda dalam setiap perjalanan atau cerita dalam hidup. 
             Kami menyediakan peralatan produksi untuk menemani setiap langkah momen Anda. Jangan ragu untuk menyewa peralatan dari kami. 
             Kami siap menemani Anda dalam setiap langkah apapun yang Anda inginkan.</p>
-          <p><a href="#" class="btn btn-primary py-3 px-4">Cari kamera</a></p>
+          <p><a href="?hal=Rental" class="btn btn-primary py-3 px-4">Cari kamera</a></p>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
       <div class="col-md-6 heading-section heading-section-white ftco-animate">
         <h2 class="mb-3">Tunggu apa lagi? segera sewa alat dari kami.
         </h2>
-        <a href="#" class="btn btn-primary btn-lg">Saya ingin rental</a>
+        <a href="?hal=Rental  " class="btn btn-primary btn-lg">Saya ingin rental</a>
       </div>
     </div>
   </div>

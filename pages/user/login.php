@@ -1,10 +1,42 @@
 
+
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/user/login/css/style.css">
     <title>Modern Login Page | AsmrProg</title>
+    <?php
+include 'C:\laragon\www\Semester-3\pages\user\koneksi.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        if (password_verify($password, $user['password'])) {
+            echo "Login berhasil! Selamat datang, " . $user['name'];
+        } else {
+            echo "Password salah!";
+        }
+    } else {
+        echo "Email tidak ditemukan!";
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
     <style>
         * {
             margin: 0;
@@ -250,7 +282,7 @@
                     <a href="#" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <span class="text-white">Atau langsung login jika anda memiliki akun</span>
-                <input type="email" placeholder="Email">
+                <input type="username" placeholder="Username">
                 <input type="password" placeholder="Password">
                 <a href="#" class="text-white">Forget Your Password?</a>
                 <button>Sign In</button>
@@ -274,3 +306,4 @@
 
     <script src="assets/user/login/js/script.js"></script>
 </body>
+</html>

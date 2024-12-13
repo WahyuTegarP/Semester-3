@@ -1,6 +1,6 @@
 <?php
 // Database connection
-$conn = new mysqli("localhost", "root", "", "rental_system");
+$conn = new mysqli('localhost', 'root', '1234', 'db_sewakamera');
 
 // Fetch transactions
 $result = $conn->query("SELECT * FROM transactions");
@@ -63,7 +63,7 @@ $total_price = 0;
                 </tr>
             </tfoot>
         </table>
-        <a href="Transaksi_user.php" class="btn btn-primary">Tambah Transaksi Baru</a>
-        <a href="index.php" class="btn btn-secondary">Kembali ke Home</a>
+        <a href="?hal=Transaksi_user" class="btn btn-primary">Tambah Transaksi Baru</a>
+        <a href="?hal=beranda" class="btn btn-secondary">Kembali ke Home</a>
     </div>
 </body>

@@ -29,46 +29,16 @@
     <div class="row no-gutters">
       <div class="col-md-12	featured-top">
         <div class="row no-gutters">
-          <div class="col-md-4 d-flex align-items-center">
-            <form action="#" class="request-form ftco-animate bg-success">
-              <h2>Ciptakan momenmu!</h2>
-              <div class="form-group">
-                <label for="" class="label">Pick-up location</label>
-                <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-              </div>
-              <div class="form-group">
-                <label for="" class="label">Drop-off location</label>
-                <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-              </div>
-              <div class="d-flex">
-                <div class="form-group mr-2">
-                  <label for="" class="label">Pick-up date</label>
-                  <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
-                </div>
-                <div class="form-group ml-2">
-                  <label for="" class="label">Drop-off date</label>
-                  <input type="text" class="form-control" id="book_off_date" placeholder="Date">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="" class="label">Pick-up time</label>
-                <input type="text" class="form-control" id="time_pick" placeholder="Time">
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Rent A Camera Now" class="btn btn-primary py-3 px-4">
-              </div>
-            </form>
-          </div>
-          <div class="col-md-8 d-flex align-items-center">
+          <div class="col-md-12 d-flex align-items-center">
             <div class="services-wrap rounded-right w-100">
-              <h3 class="heading-section mb-4">Better Way to Rent Your Perfect Camera</h3>
+              <h3 class="heading-section mb-4" align="center">persewaan Kamera yang tepat untuk mengabadikan momenmu! </h3>
               <div class="row d-flex mb-4">
                 <div class="col-md-4 d-flex align-self-stretch ftco-animate">
                   <div class="services w-100 text-center">
                     <div class="icon d-flex align-items-center justify-content-center"><span
                         class="flaticon-route"></span></div>
                     <div class="text w-100">
-                      <h3 class="heading mb-2">Choose Your Pickup Location</h3>
+                      <h3 class="heading mb-2">Lokasi yang strategis</h3>
                     </div>
                   </div>
                 </div>
@@ -77,7 +47,7 @@
                     <div class="icon d-flex align-items-center justify-content-center"><span
                         class="flaticon-handshake"></span></div>
                     <div class="text w-100">
-                      <h3 class="heading mb-2">Select the Best Deal</h3>
+                      <h3 class="heading mb-2">Harga sesuai budget</h3>
                     </div>
                   </div>
                 </div>
@@ -88,13 +58,13 @@
                       <!-- Ukuran lebih besar -->
                     </div>
                     <div class="text w-100">
-                      <h3 class="heading mb-2">Reserve Your Rental Camera</h3>
+                      <h3 class="heading mb-2">Pesan kamera sewa kalian</h3>
                     </div>
                   </div>
                 </div>
 
               </div>
-              <p><a href="?hal=Transaksi_user" class="btn btn-primary py-3 px-4">Saya ingin sewa!</a></p>
+              <p align="center"><a href="?hal=Transaksi_user" class="btn btn-primary py-3 px-4">Saya ingin sewa!</a></p>
             </div>
           </div>
         </div>
@@ -106,8 +76,8 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-        <span class="subheading">What we offer</span>
-        <h2 class="mb-2">Feeatured Camera</h2>
+        <span class="subheading">Alat andyalan kita</span>
+        <h2 class="mb-2">Check This Out!</h2>
       </div>
     </div>
     <div class="row">
@@ -124,7 +94,7 @@
                   <span class="cat">Sony FE-Mount</span>
                   <p class="price ml-auto">Rp. 350.000 <span>/day</span></p>
                 </div>
-                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
+                <p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
                     class="btn btn-secondary py-2 ml-1">Details</a></p>
               </div>
             </div>
@@ -140,7 +110,7 @@
                   <span class="cat">Sony FE-Mount</span>
                   <p class="price ml-auto">Rp. 250.000 <span>/day</span></p>
                 </div>
-                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
+                <p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
                     class="btn btn-secondary py-2 ml-1">Details</a></p>
               </div>
             </div>
@@ -156,7 +126,7 @@
                   <span class="cat">Sony E-Mount</span>
                   <p class="price ml-auto">Rp. 175.000 <span>/day</span></p>
                 </div>
-                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
+                <p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
                     class="btn btn-secondary py-2 ml-1">Details</a></p>
               </div>
             </div>
@@ -164,15 +134,15 @@
           <div class="item">
             <div class="car-wrap rounded ftco-animate">
               <div class="img rounded d-flex align-items-end"
-                style="background-image: url(assets/user/images/FX_30.jpg);">
+                style="background-image: url(assets/user/images/SonyE16mm_miring.jpg);">
               </div>
               <div class="text">
-                <h2 class="mb-0"><a href="#">Sony FX 30</a></h2>
+                <h2 class="mb-0"><a href="#">Sigma Sony 16mm F1.4</a></h2>
                 <div class="d-flex mb-3">
-                  <span class="cat">Sony E-Mount</span>
-                  <p class="price ml-auto">Rp. 500.000 <span>/day</span></p>
+                  <span class="cat">Lensa Sony E-Mount</span>
+                  <p class="price ml-auto">Rp. 140.000 <span>/day</span></p>
                 </div>
-                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
+                <p class="d-flex mb-0 d-block"><a href="?hal=Transaksi_user" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#"
                     class="btn btn-secondary py-2 ml-1">Details</a></p>
               </div>
             </div>
@@ -201,7 +171,7 @@
             berupa kamera yang siap menemani momen Anda dalam setiap perjalanan atau cerita dalam hidup. Kami
             menyediakan peralatan produksi untuk menemani setiap langkah momen Anda. Jangan ragu untuk menyewa
             peralatan dari kami. Kami siap menemani Anda dalam setiap langkah apapun yang Anda inginkan.</p>
-          <p><a href="#" class="btn btn-primary py-3 px-4">Cari Kamera</a></p>
+          <p><a href="?hal=Transaksi_user" class="btn btn-primary py-3 px-4">Cari Kamera</a></p>
         </div>
       </div>
     </div>
@@ -271,7 +241,7 @@
     <div class="row justify-content-end">
       <div class="col-md-6 heading-section heading-section-white ftco-animate">
         <h2 class="mb-3">Tunggu apa lagi? segera sewa alat dari kami.</h2>
-        <a href="#" class="btn btn-primary btn-lg">Saya ingin rental</a>
+        <a href="?hal=Rental" class="btn btn-primary btn-lg">Saya ingin rental</a>
       </div>
     </div>
   </div>
@@ -414,11 +384,11 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+       <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
         <div class="block-18">
           <div class="text text-border d-flex align-items-center">
             <strong class="number" data-number="5">5</strong>
-            <span>Total <br>Camera</span>
+            <span>Total <br>Kamera</span>
           </div>
         </div>
       </div>

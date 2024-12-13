@@ -53,8 +53,8 @@
 <body>
     <div class="container mt-5">
         <div class="card fade-in p-4">
-            <h2>Transaksi</h2>
-            <form method="POST" enctype="multipart/form-data" action="submit.php">
+            <h2>Booking</h2>
+            <form method="POST" enctype="multipart/form-data" action="?hal=submit">
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
                     <input type="text" name="Nama" class="form-control" required>
@@ -62,7 +62,7 @@
                 <div class="mb-3">
                     <label class="form-label">Produk</label>
                     <select name="item" class="Produk" required>
-                        <option value="Ca   mera">Sony A7 Mark III</option>
+                        <option value="Camera">Sony A7 Mark III</option>
                         <option value="Camera">Sony A7 Mark II</    option>
                         <option value="Camera">Sony A6400</option>
                         <option value="Camera">Sony FX30</option>
@@ -85,12 +85,21 @@
                     <input type="text" name="Alamat" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Tanggal Transaksi</label>
-                    <input type="text" name="Tanggal_Transaksi" class="form-control" required>
+    <label class="form-label">Tanggal Booking</label>
+    <input type="date" name="Tanggal_Booking" class="form-control" required>
+</div>
+                <div class="mb-3">
+                    <label class="form-label">Jam Booking</label>
+                    <input type="text" name="Jam_Booking" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Tanggal Kembali</label>
-                    <input type="text" name="Tanggal_Kembali" class="form-control" required>
+    <label class="form-label">Tanggal Kembali</label>
+    <input type="date" name="Tanggal_Kembali" class="form-control" required>
+</div>
+
+                <div class="mb-3">
+                    <label class="form-label">Jam Kembali</label>
+                    <input type="text" name="Jam_Kembali" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Jaminan</label>
@@ -119,8 +128,8 @@
                     <label for="guarantee_photo" class="form-label">Bukti Jaminan</label>
                     <input type="file" class="form-control" id="Bukti_Jaminan" name="Bukti_Jaminan" accept="image/*" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-animate">Submit</button>
-                <a href="index.php" class="btn btn-secondary btn-animate">Kembali</a>
+                <button type="?hal=Hasil_Transaksi" class="btn btn-primary btn-animate">Submit</button>
+                <a href="?hal=beranda" class="btn btn-secondary btn-animate">Kembali</a>
             </form>
         </div>
     </div>

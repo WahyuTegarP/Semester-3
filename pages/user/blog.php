@@ -15,7 +15,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-12 text-center d-flex ftco-animate">
           	<div class="blog-entry justify-content-end mb-md-5">
-              <a href="blog-single.php" class="block-20 img" style="background-image: url('assets/user/images/IMG_6702.jpg');">
+              <a href="?hal=blog-single" class="block-20 img" style="background-image: url('assets/user/images/IMG_6702.jpg');">
               </a>
               <div class="text px-md-5 pt-4">
               	<div class="meta mb-3">
@@ -25,7 +25,7 @@
                 </div>
                 <h3 class="heading mt-2"><a href="#">Lokasi yang bernuansa alam dengan dataran tinggi dan udara yang masih segar</a></h3>
                 <p>Tempat persewaan dan studio foto yang menawarkan lokasi strategis dengan nuansa alam dan tidak ramai dengan lalu lintas kota.</p>
-                <p><a href="?hal=blog-single.php" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
+                <p><a href="?hal=blog-single" class="btn btn-primary">Continue <span class="icon-long-arrow-right"></span></a></p>
               </div>
             </div>
           </div>

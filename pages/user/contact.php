@@ -38,7 +38,13 @@
 			          	<div class="icon mr-3">
 			          		<span class="icon-envelope-o"></span>
 			          	</div>
-			            <p><span>Email:</span> <a href="biruhijauproject@gmail.com">biruhijaustudio@gmail.com</a></p>
+			            <p>
+    <span>Email:</span> 
+    <a href="mailto:biruhijaustudio@gmail.com?subject=Pertanyaan%20Proyek%20Biruhijau&body=Halo%20Tim%20Biruhijau,%0D%0A%0D%0A[Isi%20pesan%20Anda%20di%20sini]%0D%0A%0D%0ASalam,%0D%0A[Nama%20Anda]">
+        biruhijaustudio@gmail.com
+    </a>
+</p>
+
 			          </div>
 		          </div>
 		        </div>

@@ -8,14 +8,14 @@
 
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="?hal=beranda" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="?hal=about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="?hal=services" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="?hal=pricing" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="?hal=rental" class="nav-link">Rental</a></li>
-        <li class="nav-item"><a href="?hal=blog" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="?hal=contact" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="?hal=login" class="nav-link">Login</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'beranda') {echo 'active';}?>"><a href="?hal=beranda" class="nav-link">Home</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'about') {echo 'active';}?>"><a href="?hal=about" class="nav-link">About</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'services') {echo 'active';}?>"><a href="?hal=services" class="nav-link">Services</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'pricing') {echo 'active';}?>"><a href="?hal=pricing" class="nav-link">Pricing</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'rental') {echo 'active';}?>"><a href="?hal=rental" class="nav-link">Rental</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'blog') {echo 'active';}?>"><a href="?hal=blog" class="nav-link">Blog</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'contact') {echo 'active';}?>"><a href="?hal=contact" class="nav-link">Contact</a></li>
+        <li class="nav-item <?php if(@$_GET['hal'] == 'login') {echo 'active';}?>"><a href="?hal=login" class="nav-link">Login</a></li>
       </ul>
     </div>
   </div>
