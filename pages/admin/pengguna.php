@@ -108,12 +108,12 @@ if ($result->num_rows > 0) {
     <table>
         <thead>
             <tr>
-                <th>User ID</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Status</th>
-                <th>Aksi</th>
+                <th style="text-align: center;" class="text-light bg-primary">User ID</th>
+                <th style="text-align: center;" class="text-light bg-primary">Nama</th>
+                <th style="text-align: center;" class="text-light bg-primary">Email</th>
+                <th style="text-align: center;" class="text-light bg-primary">Password</th>
+                <th style="text-align: center;" class="text-light bg-primary">Status</th>
+                <th style="text-align: center;" class="text-light bg-primary">Aksi</th>
             </tr>
         </thead>
         <tbody>
