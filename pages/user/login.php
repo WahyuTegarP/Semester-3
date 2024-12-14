@@ -8,36 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/user/login/css/style.css">
     <title>Modern Login Page | AsmrProg</title>
-    <?php
-include 'C:\laragon\www\Semester-3\pages\user\koneksi.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $sql = "SELECT * FROM users WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-
-        if (password_verify($password, $user['password'])) {
-            echo "Login berhasil! Selamat datang, " . $user['name'];
-        } else {
-            echo "Password salah!";
-        }
-    } else {
-        echo "Email tidak ditemukan!";
-    }
-
-    $stmt->close();
-    $conn->close();
-}
-?>
-    <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
@@ -257,7 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form>  
                 <h1 class="text-white">Create Account</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
@@ -266,12 +238,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="#" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <span class="text-white">Daftarkan Akun pribadi Anda untuk menggunakan semua fitur situs</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign Up</button>
+                <input type="nama" placeholder="nama" required>
+                <input type="email" placeholder="email" required>
+                <input type="password" placeholder="password">
+                <button type="button">Sign Up</button>
             </form>
         </div>
+
+
         <div class="form-container sign-in">
             <form>
                 <h1 class="text-white">Sign In</h1>
@@ -282,12 +256,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="#" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <span class="text-white">Atau langsung login jika anda memiliki akun</span>
-                <input type="username" placeholder="Username">
-                <input type="password" placeholder="Password">
+                <input type="username" placeholder="email" id="emailLogin" required>
+                <input type="password" placeholder="password" id="passLogin" required>
                 <a href="#" class="text-white">Forget Your Password?</a>
-                <button>Sign In</button>
+                <button type="button" onclick="login()">Sign In</button>
             </form>
         </div>
+
+        
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left bg-success text-white">
@@ -305,5 +281,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <script src="assets/user/login/js/script.js"></script>
+
+    <script>
+        function login() {
+            let data = {
+                'email': document.getElementById('emailLogin').value,
+                'pass': document.getElementById('passLogin').value
+            };
+            fetch("crud/login.php", {
+                'method': 'POST',
+                'body': JSON.stringify(data)
+            }).then(response => {
+                return response.json();
+            }).then(text => {
+                if(text.status == 'success') {
+                    window.location.href = window.location.href.replace('hal=login', 'hal=dashboard');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

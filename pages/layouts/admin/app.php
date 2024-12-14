@@ -1,3 +1,9 @@
+<?php 
+  if(isset($_POST['btn-logout2'])) {
+    session_destroy();
+    header('Location: ?hal=beranda');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +71,9 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <form method="POST">
+            <button name="btn-logout2" class="btn btn-primary" type="submit">Logout</button>
+          </form>
         </div>
       </div>
     </div>
