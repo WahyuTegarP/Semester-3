@@ -1,5 +1,5 @@
 <?php
-include 'connection/conn.php';
+include 'C:\laragon\www\PROJECT\Semester-3\pages\admin\koneksi.php';
 
 if($_SERVER['REQUEST_METHOD'] = 'POST') {
     //ambil data dari form

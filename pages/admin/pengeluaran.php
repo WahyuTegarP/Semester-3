@@ -33,118 +33,24 @@ if ($result->num_rows > 0) {
     <div class="d-sm-flex align-items-center justify-content-between mb-1">
     </div>
 
-    <style>
-    /* Styling untuk tabel dan elemen-elemen lainnya */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    table, th, td {
-        border: 1px solid #ddd;
-    }
-
-    th, td {
-        padding: 12px;
-        text-align: center;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-        font-weight: bold;
-    }
-
-    td {
-        background-color: #f9f9f9;
-    }
-
-    tr:nth-child(even) td {
-        background-color: #f2f2f2;
-    }
-
-    tr:hover td {
-        background-color: #ddd;
-    }
-
-    .action-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .action-buttons button {
-        padding: 6px 12px;
-        font-size: 14px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .btn-edit {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    .btn-delete {
-        background-color: #f44336;
-        color: white;
-    }
-
-    .btn-view {
-        background-color: #2196F3;
-        color: white;
-    }
-
-    .search-box {
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: flex-start; /* Mengubah posisi ke kiri */
-        align-items: center;
-    }
-
-    .search-box input {
-        padding: 6px;
-        width: 260px; /* Lebih kecil sedikit */
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        margin-right: 10px;
-    }
-
-    .search-box button {
-        padding: 6px 16px;
-        background-color: #4e73df;
-        border: none;
-        color: white;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-
-    .search-box button:hover {
-        background-color: #0056b3;
-    }
-
-    .search-box input:focus,
-    .search-box button:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-    </style>
-
     <h3>Data Pengeluaran</h3>
 
     <!-- Form Pencarian -->
-    <form method="GET" class="search-box">
-        <input type="text" name="cari" placeholder="Cari (nama_barang, tgl_pengeluaran)"
-            value="<?= htmlspecialchars($cari) ?>">
-        <button type="submit">Cari</button>
-    </form>
+<form class="d-none d-sm-inline-block form-inline my-2 my-md-0 mw-100 navbar-search">
+    <div class="input-group">
+        <!-- Menggunakan kelas bg-white dari Bootstrap -->
+        <input type="text" class="form-control bg-white border-0 small" placeholder="Search for..." aria-label="Search"
+            aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="button">
+                <i class="fas fa-search fa-sm"></i>
+            </button>
+        </div>
+    </div>
+</form>
 
     <!-- Tabel Data Pengeluaran -->
-    <table>
+    <table class="table table-striped table-hover my-4">
         <thead>
             <tr>
                 <th class="text-light bg-primary">Id</th>
@@ -168,8 +74,12 @@ if ($result->num_rows > 0) {
                         <td><?= $pengeluaran['metode_pembayaran'] ?></td>
                         <td>
                             <div class="action-buttons">
-                                <button class="btn btn-info" type="button"
-                                    onclick="confirmDetail(<?= $pengeluaran['id_pengeluaran'] ?>)">Detail</button>
+                            <button type="button" class="btn btn-info" 
+                    data-toggle="modal" 
+                    data-target="#detailModal"
+                    onclick="showDetail(<?= htmlspecialchars(json_encode($transaksi)) ?>)">
+                    Detail
+                    </button>
                                 <button class="btn btn-primary" type="button"
                                     onclick="window.location.href='edit.php?id_pengeluaran=<?= $pengeluaran['id_pengeluaran'] ?>'">Edit</button>
                                 <button class="btn btn-danger " type="button"
@@ -185,13 +95,46 @@ if ($result->num_rows > 0) {
             <?php endif; ?>
         </tbody>
     </table>
+<!-- Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detail Pengeluaran</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body table-responsive">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th>ID Pengeluaran</th>
+              <td id="id_pengeluaran"></td>
+            </tr>
+            <tr>
+              <th>Tanggal</th>
+              <td id="tgl_pengeluaran"></td>
+            </tr>
+            <tr>
+              <th>Pembayaran</th>
+              <td id="metode_pembayaran"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <script>
-    function confirmDetail(id) {
-        var userConfirmed = confirm("Apakah Anda yakin ingin melihat detail pengeluaran ini?");
-        if (userConfirmed) {
-            window.location.href = 'detail.php?id_pengeluaran=' + id;
-        }
-    }
+function showDetail(pengeluaran) {
+document.getElementById('id_pengeluaran').textContent = pengeluaran.id_pengeluaran;
+document.getElementById('tgl_pengeluaran').textContent = pengeluaran.tgl_pengeluaran;
+document.getElementById('metode_pembayaran').textContent = pengeluaran.metode_pembayaran;
+}
 </script>

@@ -15,44 +15,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validasi sederhana
     if (!empty($nama_product) && !empty($kategori) && !empty($harga_sewa) && !empty($status_produk)) {
-        // Query untuk menambahkan data baru
-        $sqlInsert = "INSERT INTO product (nama_product, kategori, harga_sewa, status_produk)
-                      VALUES ('$nama_product', '$kategori', '$harga_sewa', '$status_produk')";
+        // Query untuk menambahkan data baru dengan prepared statement
+        $stmt = $koneksi->prepare("INSERT INTO product (nama_product, kategori, harga_sewa, status_produk) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssis", $nama_product, $kategori, $harga_sewa, $status_produk);
 
-        if ($koneksi->query($sqlInsert)) {
+        if ($stmt->execute()) {
             echo "<script>alert('Data berhasil ditambahkan!'); window.location.href='';</script>";
         } else {
-            echo "<script>alert('Gagal menambahkan data: " . $koneksi->error . "');</script>";
+            echo "<script>alert('Gagal menambahkan data: " . $stmt->error . "');</script>";
         }
+        $stmt->close();
     } else {
         echo "<script>alert('Harap lengkapi semua data!');</script>";
     }
 }
+
+// Cek jika ada permintaan untuk menghapus data
+if (isset($_GET['delete'])) {
+    $product_id = $_GET['delete'];
+
+    // Query untuk menghapus data berdasarkan ID
+    $stmt = $koneksi->prepare("DELETE FROM product WHERE product_id = ?");
+    $stmt->bind_param("i", $product_id);
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Data berhasil dihapus!'); window.location.href='';</script>";
+    } else {
+        echo "<script>alert('Gagal menghapus data: " . $stmt->error . "');</script>";
+    }
+    $stmt->close();
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manajemen Kamera</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex justify-content-between">
-                    <h2 class="m-0 font-weight-bold text-primary">Daftar Kamera</h2>
+                    <h2 class="m-0 font-weight-bold text-primary">Daftar Barang</h2>
                     <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#addDataModal">
-                        <i class="fas fa-plus"></i> Tambah Data
+                        <i class="fas fa-plus"></i> Tambah Barang
                     </button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" width="100%" cellspacing="0">
+                        <table class="table table-bordered text-center" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -75,9 +82,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             <td>Rp <?= number_format($row['harga_sewa'], 0, ',', '.'); ?></td>
                                             <td><?= htmlspecialchars($row['status_produk']); ?></td>
                                             <td>
-                                                <button class="btn btn-sm btn-primary">Detail</button>
-                                                <button class="btn btn-sm btn-warning">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Hapus</button>
+                                                <div class="action-buttons">
+                                                    <button class="btn btn-sm btn-primary">Detail</button>
+                                                    <button type="button" class="btn btn-warning btn-sm" 
+                                                    onclick="editInput('<?= $row['product_id'] ?>', '<?= htmlspecialchars($row['nama_product']) ?>', '<?= htmlspecialchars($row['kategori']) ?>', '<?= $row['harga_sewa'] ?>', '<?= htmlspecialchars($row['status_produk']) ?>')">
+                                                    <i class="bi bi-pencil"></i> Edit
+                                                    </button>
+                                                    <a href="?delete=<?= $row['product_id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
+                                                </div>
                                             </td>
                                         </tr>
                                     <?php endwhile;
@@ -131,9 +143,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </div>
+
+    <!-- Modal Edit Data -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Data Barang</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form untuk menyimpan perubahan -->
+                    <form id="editForm" method="POST" action="edit_user.php">
+                        <div class="mb-3">
+                            <label for="editNama" class="form-label">Nama Kamera</label>
+                            <input type="text" class="form-control" id="editNama" name="nama_product" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editKategori" class="form-label">Kategori</label>
+                            <input type="text" class="form-control" id="editKategori" name="kategori" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editHarga" class="form-label">Harga Sewa</label>
+                            <input type="decimal" class="form-control" id="editHarga" name="harga_sewa" required>
+                        </div>
+                        <div class="form-group">
+                                <label for="status_produk">Status</label>
+                                <select class="form-control" id="status_produk" name="status_produk" required>
+                                    <option value="">Pilih Status</option>
+                                    <option value="ada">Ada</option>
+                                    <option value="tidak ada">Tidak Ada</option>
+                                </select>
+                            </div>
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<script>
+    // Fungsi untuk membuka modal edit dengan data pengguna
+    function editInput(id, nama, kategori, harga, status) {
+        document.getElementById('editNama').value = nama;
+        document.getElementById('editKategori').value = kategori;
+        document.getElementById('editHarga').value = harga;
+        document.getElementById('status_produk').value = status;
+
+        // Tampilkan modal edit
+        var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+        editModal.show();
+    }
+</script>

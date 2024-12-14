@@ -119,6 +119,14 @@
               <td id="tgl_transaksi"></td>
             </tr>
             <tr>
+              <th>Jumlah Produk</th>
+              <td id="jumlah_product"></td>
+            </tr>
+            <tr>
+            <tr>
+              <th>Harga Sewa</th>
+              <td id="harga_sewa"></td>
+            </tr>
               <th>Jaminan</th>
               <td id="barang_jaminan"></td>
             </tr>
@@ -140,9 +148,12 @@
 <script>
 function showDetail(transaksi) {
 document.getElementById('transaksi_id').textContent = transaksi.transaksi_id;
+document.getElementById('product_id').textContent = transaksi.product_id;
 document.getElementById('nama_penyewa').textContent = transaksi.nama_penyewa;
 document.getElementById('nama_product').textContent = transaksi.nama_product;
 document.getElementById('tgl_transaksi').textContent = transaksi.tgl_transaksi;
+document.getElementById('jumlah_product').textContent = transaksi.jumlah_product;
+document.getElementById('harga_sewa').textContent = transaksi.harga_sewa;
 document.getElementById('barang_jaminan').textContent = transaksi.barang_jaminan;
 document.getElementById('metode_transaksi').textContent = transaksi.metode_transaksi;
 }

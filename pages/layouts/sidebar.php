@@ -53,7 +53,6 @@ body {
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item" href="?hal=kamerainpt">Kamera</a>
-        <a class="collapse-item" href="?hal=alat">Alat-Alat</a>
       </div>
     </div>
   </li>
@@ -111,7 +110,7 @@ body {
   <!-- Item Navigasi - Tabel -->
   <li class="nav-item">
     <a class="nav-link" href="?hal=pengeluaran">
-      <i class="fas fa-fw fa-table"></i>
+      <i class="fa fa-bars"></i>
       <span>Data Pengeluaran</span>
     </a>
   </li>
