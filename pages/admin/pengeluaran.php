@@ -58,6 +58,7 @@ if ($result->num_rows > 0) {
                 <th class="text-light bg-primary">Kerusakan</th>
                 <th class="text-light bg-primary">Nama Barang</th>
                 <th class="text-light bg-primary">Jumlah</th>
+                <th class="text-light bg-primary">Harga</th>
                 <th class="text-light bg-primary">Metode Pembayaran</th>
                 <th class="text-light bg-primary">Aksi</th>
             </tr>
@@ -66,24 +67,25 @@ if ($result->num_rows > 0) {
         <?php if (!empty($data_pengeluaran)): ?>
             <?php foreach ($data_pengeluaran as $pengeluaran): ?>
                     <tr>
-                        <td><?= $pengeluaran['id_pengeluaran'] ?></td>
+                        <td><?= $pengeluaran['pengeluaran_id'] ?></td>
                         <td><?= $pengeluaran['tgl_pengeluaran'] ?></td>
                         <td><?= $pengeluaran['kategori'] ?></td>
                         <td><?= $pengeluaran['nama_barang'] ?></td>
                         <td><?= $pengeluaran['jumlah'] ?></td>
+                        <td><?= $pengeluaran['harga_pengeluaran'] ?></td>
                         <td><?= $pengeluaran['metode_pembayaran'] ?></td>
                         <td>
                             <div class="action-buttons">
                             <button type="button" class="btn btn-info" 
                     data-toggle="modal" 
                     data-target="#detailModal"
-                    onclick="showDetail(<?= htmlspecialchars(json_encode($transaksi)) ?>)">
+                    onclick="showDetail(<?= htmlspecialchars(json_encode($pengeluaran)) ?>)">
                     Detail
                     </button>
                                 <button class="btn btn-primary" type="button"
-                                    onclick="window.location.href='edit.php?id_pengeluaran=<?= $pengeluaran['id_pengeluaran'] ?>'">Edit</button>
+                                    onclick="window.location.href='edit.php?pengeluaran_id=<?= $pengeluaran['pengeluaran_id'] ?>'">Edit</button>
                                 <button class="btn btn-danger " type="button"
-                                    onclick="if(confirm('Apakah Anda yakin ingin menghapus transaksi ini?')) window.location.href='hapus.php?id_pengeluaran=<?= $pengeluaran['id_pengeluaran'] ?>'">Hapus</button>
+                                    onclick="if(confirm('Apakah Anda yakin ingin menghapus transaksi ini?')) window.location.href='hapus.php?pengeluaran_id=<?= $pengeluaran['pengeluaran_id'] ?>'">Hapus</button>
                             </div>
                         </td>
                     </tr>
@@ -95,6 +97,7 @@ if ($result->num_rows > 0) {
             <?php endif; ?>
         </tbody>
     </table>
+
 <!-- Modal -->
 <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -110,15 +113,34 @@ if ($result->num_rows > 0) {
           <tbody>
             <tr>
               <th>ID Pengeluaran</th>
-              <td id="id_pengeluaran"></td>
+              <td id="pengeluaran_id"></td>
             </tr>
             <tr>
               <th>Tanggal</th>
               <td id="tgl_pengeluaran"></td>
             </tr>
             <tr>
-              <th>Pembayaran</th>
+              <th>Kategori</th>
+              <td id="kategori"></td>
+            </tr>
+            <tr>
+              <th>Nama Barang</th>
+              <td id="nama_barang"></td>
+            </tr>
+            <tr>
+              <th>Jumlah</th>
+              <td id="jumlah"></td>
+            </tr>
+            <tr>
+              <th>Keterangan</th>
+              <td id="keterangan"></td>
+            </tr>
+            <tr>
+              <th>Metode Pembayaran</th>
               <td id="metode_pembayaran"></td>
+            </tr>
+              <th>Harga</th>
+              <td id="harga_pengeluaran"></td>
             </tr>
           </tbody>
         </table>
@@ -133,8 +155,13 @@ if ($result->num_rows > 0) {
 
 <script>
 function showDetail(pengeluaran) {
-document.getElementById('id_pengeluaran').textContent = pengeluaran.id_pengeluaran;
+document.getElementById('pengeluaran_id').textContent = pengeluaran.pengeluaran_id;
 document.getElementById('tgl_pengeluaran').textContent = pengeluaran.tgl_pengeluaran;
+document.getElementById('kategori').textContent = pengeluaran.kategori;
+document.getElementById('nama_barang').textContent = pengeluaran.nama_barang;
+document.getElementById('jumlah').textContent = pengeluaran.jumlah;
+document.getElementById('keterangan').textContent = pengeluaran.keterangan;
 document.getElementById('metode_pembayaran').textContent = pengeluaran.metode_pembayaran;
+document.getElementById('harga_pengeluaran').textContent = pengeluaran.harga_pengeluaran;
 }
 </script>

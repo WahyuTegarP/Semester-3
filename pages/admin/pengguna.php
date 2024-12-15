@@ -1,24 +1,38 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-<h2 class="m-0 font-weight-bold text-primary">Data Pengguna</h2>
+    <h2 class="m-0 font-weight-bold text-primary">Data Pengguna</h2>
     <br>
 
     <?php
-// Koneksi ke database
-include 'C:\laragon\www\PROJECT\Semester-3\pages\admin\koneksi.php';
-$sql = "SELECT * FROM user"; // Sesuaikan nama tabel dengan yang ada di database
-$result = $koneksi->query($sql);
+    // Koneksi ke database
+    include 'C:\laragon\www\PROJECT\Semester-3\pages\admin\koneksi.php';
 
-// Ambil semua data pengguna
-$data_pengguna = [];
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $data_pengguna[] = $row;
+    // Ambil data pencarian dari parameter URL
+    $search = isset($_GET['search']) ? $_GET['search'] : '';
+
+    // Query SQL untuk mengambil data pengguna dengan kondisi pencarian
+    if ($search) {
+        // Query dengan kondisi pencarian berdasarkan nama dan email
+        $sql = "SELECT * FROM user WHERE nama LIKE '%$search%' OR email LIKE '%$search%'";
+    } else {
+        // Query tanpa kondisi pencarian jika tidak ada input pencarian
+        $sql = "SELECT * FROM user";
     }
-}
-?>
+
+    // Eksekusi query
+    $result = $koneksi->query($sql);
+
+    // Ambil semua data pengguna
+    $data_pengguna = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $data_pengguna[] = $row;
+        }
+    }
+    ?>
 
     <style>
+        /* Styling tetap sama */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -84,25 +98,35 @@ if ($result->num_rows > 0) {
         }
 
         .form-inline {
-        margin-left: 2px; /* Ubah nilai sesuai kebutuhan */
-    
-    }
+            margin-left: 2px; /* Ubah nilai sesuai kebutuhan */
+        }
     </style>
 
-<!-- Form Pencarian -->
-<form class="d-none d-sm-inline-block form-inline my-2 my-md-0 mw-100 navbar-search">
+    <!-- Tombol Pencarian Baru -->
+   <!-- Form Pencarian -->
+<form class="d-none d-sm-inline-block form-inline my-2 my-md-0 mw-100 navbar-search" method="GET" action="<?= $_SERVER['PHP_SELF']; ?>">
     <div class="input-group">
-        <!-- Menggunakan kelas bg-white dari Bootstrap -->
-        <input type="text" class="form-control bg-white border-0 small" placeholder="Search for..." aria-label="Search"
-            aria-describedby="basic-addon2">
+        <input type="text" name="search" class="form-control bg-white border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" id="searchInput" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">
         <div class="input-group-append">
-            <button class="btn btn-primary" type="button">
-                <i class="fas fa-search fa-sm"></i>
+            <button class="btn btn-primary" type="button" onclick="searchData()">
+                <i class="fas fa-search fa-sm"></i> Cari
             </button>
         </div>
     </div>
 </form>
-  
+
+
+    <script>
+        // Fungsi untuk mengirimkan form pencarian
+        function searchData() {
+        var searchValue = document.getElementById('searchInput').value;
+        if (searchValue) {
+            window.location.href = '<?= $_SERVER['PHP_SELF']; ?>?search=' + searchValue + '&hal=pengguna';
+        } else {
+            alert("Masukkan kata kunci pencarian.");
+        }
+    }
+    </script>
 
     <!-- Tabel Data Pengguna -->
     <table>
@@ -131,7 +155,7 @@ if ($result->num_rows > 0) {
                                 </button>
 
                                 <button class="btn-delete" type="button"
-                                    onclick="if(confirm('Apakah Anda yakin ingin menghapus pengguna ini?')) window.location.href='delete_user.php?user_id=<?= $user['user_id'] ?>'">Hapus</button>
+                                onclick="if(confirm('Apakah Anda yakin ingin menghapus pengguna ini?')){hapusData(<?= $user['user_id'] ?>)}">Hapus</button>
                             </div>
                         </td>
                     </tr>
@@ -145,53 +169,90 @@ if ($result->num_rows > 0) {
     </table>
 
     <!-- Modal Edit Data -->
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit Data Pengguna</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Form untuk menyimpan perubahan -->
-                <form id="editForm" method="POST" action="">
-                    <div class="mb-3">
-                        <label for="editUserId" class="form-label">User ID</label>
-                        <input type="text" class="form-control" id="editUserId" name="user_id" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label for="editNama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="editNama" name="nama" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="editEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="editEmail" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="editPassword" class="form-label">Password</label>
-                        <input type="text" class="form-control" id="editPassword" name="password" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="editStatus" class="form-label">Status</label>
-                        <input type="text" class="form-control" id="editStatus" name="status" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                </form>
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Data Pengguna</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form untuk menyimpan perubahan -->
+                    <form id="editForm" method="POST" action="">
+                        <div class="mb-3">
+                            <label for="editUserId" class="form-label">User ID</label>
+                            <input type="text" class="form-control" id="editUserId" name="user_id" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="editNama" name="nama" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPassword" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="editPassword" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editStatus" class="form-label">Status</label>
+                            <input type="text" class="form-control" id="editStatus" name="status" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script>
-    // Fungsi untuk membuka modal edit dengan data pengguna
-    function editUser(userId, nama, email, status, password) {
-        document.getElementById('editUserId').value = userId;
-        document.getElementById('editNama').value = nama;
-        document.getElementById('editEmail').value = email;
-        document.getElementById('editStatus').value = status;
-        document.getElementById('editPassword').value = password;
 
-        // Tampilkan modal
-        var modal = new bootstrap.Modal(document.getElementById('editModal'));
-        modal.show();
-    }
-</script>
+    <script>
+        let
+        // Fungsi untuk membuka modal edit dengan data pengguna
+        function editUser(userId, nama, email, status, password) {
+            document.getElementById('editUserId').value = userId;
+            document.getElementById('editNama').value = nama;
+            document.getElementById('editEmail').value = email;
+            document.getElementById('editStatus').value = status;
+            document.getElementById('editPassword').value = password;
+
+            // Tampilkan modal
+            var modal = new bootstrap.Modal(document.getElementById('editModal'));
+            modal.show();
+        }
+
+        function editData(id) {
+            let xhttp = new XMLHttpRequest();
+            let formData = new FormData();
+
+            formData.append('id', id);
+
+            xhttp.onreadystatechange = function() {
+                if(this.status == 200 && this.readyState == 4) {
+                    console.log(this.responseText);
+                }
+            };
+
+            xhttp.open("POST", "crud/hapus_pengguna.php", true);
+            xhttp.send(formData);
+        }
+
+        function hapusData(id) {
+            let xhttp = new XMLHttpRequest();
+            let formData = new FormData();
+
+            formData.append('id', id);
+
+            xhttp.onreadystatechange = function() {
+                if(this.status == 200 && this.readyState == 4) {
+                    console.log(this.responseText);
+                }
+            };
+
+            xhttp.open("POST", "crud/hapus_pengguna.php", true);
+            xhttp.send(formData);
+        }
+    </script>
+
+</div>
+<!-- End Page Content -->
