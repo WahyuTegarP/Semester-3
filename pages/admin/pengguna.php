@@ -29,6 +29,23 @@
             $data_pengguna[] = $row;
         }
     }
+
+    // Proses tambah data pengguna
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tambah_data'])) {
+        $nama = $_POST['nama'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $status = $_POST['Status'];
+
+        // Query untuk menambahkan data ke database
+        $insert_sql = "INSERT INTO user (nama, email, password, Status) VALUES ('$nama', '$email', '$password', '$status')";
+
+        if ($koneksi->query($insert_sql) === TRUE) {
+            echo "<script>alert('Data berhasil ditambahkan!'); window.location.href='" . $_SERVER['PHP_SELF'] . "';</script>";
+        } else {
+            echo "<script>alert('Terjadi kesalahan: " . $koneksi->error . "');</script>";
+        }
+    }
     ?>
 
     <style>
@@ -115,7 +132,6 @@
     </div>
 </form>
 
-
     <script>
         // Fungsi untuk mengirimkan form pencarian
         function searchData() {
@@ -127,6 +143,13 @@
         }
     }
     </script>
+    
+    <!-- Tambah Data -->
+<div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#addDataModal">
+        <i class="fas fa-plus"></i> Tambah Karyawan
+    </button>
+</div>
 
     <!-- Tabel Data Pengguna -->
     <table>
@@ -168,46 +191,93 @@
         </tbody>
     </table>
 
-    <!-- Modal Edit Data -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- Modal Tambah Data -->
+    <div class="modal fade" id="addDataModal" tabindex="-1" role="dialog" aria-labelledby="addDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Edit Data Pengguna</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="addDataModalLabel">Tambah Karyawan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body">
-                    <!-- Form untuk menyimpan perubahan -->
-                    <form id="editForm" method="POST" action="">
-                        <div class="mb-3">
-                            <label for="editUserId" class="form-label">User ID</label>
-                            <input type="text" class="form-control" id="editUserId" name="user_id" readonly>
+                <form action="" method="POST">
+                    <div class="modal-body">
+                        <input type="hidden" name="tambah_data" value="true">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="editNama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="editNama" name="nama" required>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="varchar" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="editEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="editEmail" name="email" required>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="varchar" class="form-control" id="password" name="password" placeholder="Masukkan Password" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="editPassword" class="form-label">Password</label>
-                            <input type="text" class="form-control" id="editPassword" name="password" required>
+                        <div class="form-group">
+                            <label for="status_produk">Status</label>
+                            <select class="form-control" id="Status" name="Status" required>
+                                <option value="">Pilih Status</option>
+                                <option value="Admin">Admin</option>
+                                <option value="User">User</option>
+                            </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="editStatus" class="form-label">Status</label>
-                            <input type="text" class="form-control" id="editStatus" name="status" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
+<!-- Modal Edit Data -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Data Pengguna</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form untuk menyimpan perubahan -->
+                <form id="editForm" method="POST" action="crud/edit_pengguna.php">
+
+                    <div class="mb-3">
+                        <label for="editUserId" class="form-label">User ID</label>
+                        <input type="text" class="form-control" id="editUserId" name="user_id" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editNama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="editNama" name="nama" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="editEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPassword" class="form-label">Password</label>
+                        <input type="text" class="form-control" id="editPassword" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editStatus" class="form-label">Status</label>
+                        <select class="form-control" id="editStatus" name="status" required>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <script>
-        let
         // Fungsi untuk membuka modal edit dengan data pengguna
         function editUser(userId, nama, email, status, password) {
             document.getElementById('editUserId').value = userId;
@@ -221,22 +291,6 @@
             modal.show();
         }
 
-        function editData(id) {
-            let xhttp = new XMLHttpRequest();
-            let formData = new FormData();
-
-            formData.append('id', id);
-
-            xhttp.onreadystatechange = function() {
-                if(this.status == 200 && this.readyState == 4) {
-                    console.log(this.responseText);
-                }
-            };
-
-            xhttp.open("POST", "crud/hapus_pengguna.php", true);
-            xhttp.send(formData);
-        }
-
         function hapusData(id) {
             let xhttp = new XMLHttpRequest();
             let formData = new FormData();
@@ -246,6 +300,8 @@
             xhttp.onreadystatechange = function() {
                 if(this.status == 200 && this.readyState == 4) {
                     console.log(this.responseText);
+                    alert("Data berhasil dihapus.");
+                    window.location.reload(); // Refresh halaman
                 }
             };
 
@@ -253,6 +309,5 @@
             xhttp.send(formData);
         }
     </script>
-
 </div>
 <!-- End Page Content -->

@@ -6,29 +6,31 @@ include 'C:\laragon\www\PROJECT\Semester-3\pages\admin\koneksi.php'; // Sesuaika
 $sql = "SELECT * FROM product";
 $result = $koneksi->query($sql);
 
-// Proses tambah data jika form dikirim
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nama_product = $_POST['nama_product'] ?? '';
-    $kategori = $_POST['kategori'] ?? 'Kamera'; // Default kategori "Kamera"
-    $harga_sewa = $_POST['harga_sewa'] ?? '';
-    $status_produk = $_POST['status_produk'] ?? '';
+// Cek jika form edit dikirimkan
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
+    $product_id = $_POST['product_id'];
+    $nama_product = $_POST['nama_product'];
+    $kategori = $_POST['kategori'];
+    $harga_sewa = $_POST['harga_sewa'];
+    $status_produk = $_POST['status_produk'];
 
-    // Validasi sederhana
+    // Validasi input
     if (!empty($nama_product) && !empty($kategori) && !empty($harga_sewa) && !empty($status_produk)) {
-        // Query untuk menambahkan data baru dengan prepared statement
-        $stmt = $koneksi->prepare("INSERT INTO product (nama_product, kategori, harga_sewa, status_produk) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssis", $nama_product, $kategori, $harga_sewa, $status_produk);
+        // Query untuk memperbarui data produk
+        $stmt = $koneksi->prepare("UPDATE product SET nama_product = ?, kategori = ?, harga_sewa = ?, status_produk = ? WHERE product_id = ?");
+        $stmt->bind_param("ssisi", $nama_product, $kategori, $harga_sewa, $status_produk, $product_id);
 
         if ($stmt->execute()) {
-            echo "<script>alert('Data berhasil ditambahkan!'); window.location.href='';</script>";
+            echo "<script>alert('Data berhasil diperbarui!'); window.location.href='';</script>";
         } else {
-            echo "<script>alert('Gagal menambahkan data: " . $stmt->error . "');</script>";
+            echo "<script>alert('Gagal memperbarui data: " . $stmt->error . "');</script>";
         }
         $stmt->close();
     } else {
         echo "<script>alert('Harap lengkapi semua data!');</script>";
     }
 }
+
 
 // Cek jika ada permintaan untuk menghapus data
 if (isset($_GET['delete'])) {
@@ -82,15 +84,16 @@ if (isset($_GET['delete'])) {
                                             <td>Rp <?= number_format($row['harga_sewa'], 0, ',', '.'); ?></td>
                                             <td><?= htmlspecialchars($row['status_produk']); ?></td>
                                             <td>
-                                                <div class="action-buttons">
-                                                    <button class="btn btn-sm btn-primary">Detail</button>
-                                                    <button type="button" class="btn btn-warning btn-sm" 
-                                                    onclick="editInput('<?= $row['product_id'] ?>', '<?= htmlspecialchars($row['nama_product']) ?>', '<?= htmlspecialchars($row['kategori']) ?>', '<?= $row['harga_sewa'] ?>', '<?= htmlspecialchars($row['status_produk']) ?>')">
-                                                    <i class="bi bi-pencil"></i> Edit
-                                                    </button>
-                                                    <a href="?delete=<?= $row['product_id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-                                                </div>
-                                            </td>
+    <div class="action-buttons">
+        <button type="button" class="btn btn-warning btn-sm" 
+            onclick="editInput('<?= $row['product_id'] ?>', '<?= htmlspecialchars($row['nama_product']) ?>', '<?= htmlspecialchars($row['kategori']) ?>', '<?= $row['harga_sewa'] ?>', '<?= htmlspecialchars($row['status_produk']) ?>')">
+            <i class="bi bi-pencil"></i> Edit
+        </button>
+        <button type="button" class="btn btn-danger btn-sm" onclick="hapusData('<?= $row['product_id'] ?>')">
+            <i class="bi bi-trash"></i> Hapus
+        </button>
+    </div>
+</td>
                                         </tr>
                                     <?php endwhile;
                                 else: ?>
@@ -145,39 +148,39 @@ if (isset($_GET['delete'])) {
     </div>
 
     <!-- Modal Edit Data -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Edit Data Barang</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Form untuk menyimpan perubahan -->
-                    <form id="editForm" method="POST" action="edit_user.php">
-                        <div class="mb-3">
-                            <label for="editNama" class="form-label">Nama Kamera</label>
-                            <input type="text" class="form-control" id="editNama" name="nama_product" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editKategori" class="form-label">Kategori</label>
-                            <input type="text" class="form-control" id="editKategori" name="kategori" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editHarga" class="form-label">Harga Sewa</label>
-                            <input type="decimal" class="form-control" id="editHarga" name="harga_sewa" required>
-                        </div>
-                        <div class="form-group">
-                                <label for="status_produk">Status</label>
-                                <select class="form-control" id="status_produk" name="status_produk" required>
-                                    <option value="">Pilih Status</option>
-                                    <option value="ada">Ada</option>
-                                    <option value="tidak ada">Tidak Ada</option>
-                                </select>
-                            </div>
-                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                    </form>
-                </div>
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Data Barang</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form untuk menyimpan perubahan -->
+                <form id="editForm" method="POST" action="">
+                    <div class="mb-3">
+                        <label for="editNama" class="form-label">Nama Kamera</label>
+                        <input type="text" class="form-control" id="editNama" name="nama_product" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editKategori" class="form-label">Kategori</label>
+                        <input type="text" class="form-control" id="editKategori" name="kategori" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editHarga" class="form-label">Harga Sewa</label>
+                        <input type="number" class="form-control" id="editHarga" name="harga_sewa" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status_produk" class="form-label">Status</label>
+                        <select class="form-control" id="status_produk" name="status_produk" required>
+                            <option value="">Pilih Status</option>
+                            <option value="ada">Ada</option>
+                            <option value="tidak ada">Tidak Ada</option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="editProductId" name="product_id">
+                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                </form>
             </div>
         </div>
     </div>
@@ -185,14 +188,44 @@ if (isset($_GET['delete'])) {
 
 <script>
     // Fungsi untuk membuka modal edit dengan data pengguna
-    function editInput(id, nama, kategori, harga, status) {
-        document.getElementById('editNama').value = nama;
-        document.getElementById('editKategori').value = kategori;
-        document.getElementById('editHarga').value = harga;
-        document.getElementById('status_produk').value = status;
+    // Fungsi untuk membuka modal edit dengan data produk
+function editInput(id, nama, kategori, harga, status) {
+    // Isi data ke form modal edit
+    document.getElementById('editProductId').value = id;
+    document.getElementById('editNama').value = nama;
+    document.getElementById('editKategori').value = kategori;
+    document.getElementById('editHarga').value = harga;
+    document.getElementById('status_produk').value = status;
 
-        // Tampilkan modal edit
-        var editModal = new bootstrap.Modal(document.getElementById('editModal'));
-        editModal.show();
+    // Tampilkan modal edit
+    var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+    editModal.show();
+}
+
+    function hapusData(product_id) {
+    if (!confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+        return; // Batalkan jika pengguna memilih "Batal"
     }
+
+    // Kirim permintaan hapus ke server menggunakan AJAX
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            const response = JSON.parse(this.responseText);
+            if (response.success) {
+                alert('Data berhasil dihapus!');
+                window.location.reload(); // Refresh halaman setelah data berhasil dihapus
+            } else {
+                alert('Gagal menghapus data: ' + response.message);
+            }
+        }
+    };
+
+    // Konfigurasi permintaan ke server
+    xhttp.open("POST", "crud/delete_product.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("product_id=" + product_id);
+}
+
+
 </script>

@@ -1,21 +1,22 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-  <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-1">
   </div>
 
   <?php
   include 'C:\laragon\www\PROJECT\Semester-3\pages\admin\koneksi.php';
 
-  $cari = isset($_GET['cari']) ? strtolower(trim($_GET['cari'])) : '';
+  // Ambil data pencarian dari parameter URL
+  $search = isset($_GET['search']) ? $_GET['search'] : '';
 
-  $sql = $cari !== '' ? 
-    "SELECT * FROM transaksi 
-     WHERE LOWER(invoice) LIKE '%$cari%' 
-        OR LOWER(nama_penyewa) LIKE '%$cari%' 
-        OR LOWER(nama_product) LIKE '%$cari%'
-     ORDER BY tgl_transaksi DESC" : 
-    "SELECT * FROM transaksi ORDER BY tgl_transaksi DESC";
+  // Query SQL untuk mengambil data pengguna dengan kondisi pencarian
+  if ($search) {
+    // Query dengan kondisi pencarian berdasarkan nama dan email
+    $sql = "SELECT * FROM transaksi WHERE nama_penyewa LIKE '%$search%' OR nama_product LIKE '%$search%' ORDER BY tgl_transaksi DESC";
+} else {
+    // Query tanpa kondisi pencarian jika tidak ada input pencarian
+    $sql = "SELECT * FROM transaksi ORDER BY tgl_transaksi DESC";
+}
 
   $result = $koneksi->query($sql);
 
@@ -29,19 +30,31 @@
 
 <h2>Data Transaksi</h2>
 
-<!-- Form Pencarian -->
-<form class="d-none d-sm-inline-block form-inline my-2 my-md-0 mw-100 navbar-search">
+<!-- Tombol Pencarian Baru -->
+   <!-- Form Pencarian -->
+   <form class="d-none d-sm-inline-block form-inline my-2 my-md-0 mw-100 navbar-search" method="GET" action="<?= $_SERVER['PHP_SELF']; ?>">
     <div class="input-group">
-        <!-- Menggunakan kelas bg-white dari Bootstrap -->
-        <input type="text" class="form-control bg-white border-0 small" placeholder="Search for..." aria-label="Search"
-            aria-describedby="basic-addon2">
+        <input type="text" name="search" class="form-control bg-white border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" id="searchInput" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">
         <div class="input-group-append">
-            <button class="btn btn-primary" type="button">
-                <i class="fas fa-search fa-sm"></i>
+            <button class="btn btn-primary" type="button" onclick="searchData()">
+                <i class="fas fa-search fa-sm"></i> Cari
             </button>
         </div>
     </div>
 </form>
+
+
+    <script>
+        // Fungsi untuk mengirimkan form pencarian
+        function searchData() {
+        var searchValue = document.getElementById('searchInput').value;
+        if (searchValue) {
+            window.location.href = '<?= $_SERVER['PHP_SELF']; ?>?search=' + searchValue + '&hal=datatransaksi';
+        } else {
+            alert("Masukkan kata kunci pencarian.");
+        }
+    }
+    </script>
 
 <table class="table table-striped table-hover my-4">
   <thead>
@@ -147,14 +160,14 @@
 
 <script>
 function showDetail(transaksi) {
-document.getElementById('transaksi_id').textContent = transaksi.transaksi_id;
-document.getElementById('product_id').textContent = transaksi.product_id;
-document.getElementById('nama_penyewa').textContent = transaksi.nama_penyewa;
-document.getElementById('nama_product').textContent = transaksi.nama_product;
-document.getElementById('tgl_transaksi').textContent = transaksi.tgl_transaksi;
-document.getElementById('jumlah_product').textContent = transaksi.jumlah_product;
-document.getElementById('harga_sewa').textContent = transaksi.harga_sewa;
-document.getElementById('barang_jaminan').textContent = transaksi.barang_jaminan;
-document.getElementById('metode_transaksi').textContent = transaksi.metode_transaksi;
+  document.getElementById('transaksi_id').textContent = transaksi.transaksi_id;
+  document.getElementById('product_id').textContent = transaksi.product_id;
+  document.getElementById('nama_penyewa').textContent = transaksi.nama_penyewa;
+  document.getElementById('nama_product').textContent = transaksi.nama_product;
+  document.getElementById('tgl_transaksi').textContent = transaksi.tgl_transaksi;
+  document.getElementById('jumlah_product').textContent = transaksi.jumlah_product;
+  document.getElementById('harga_sewa').textContent = transaksi.harga_sewa;
+  document.getElementById('barang_jaminan').textContent = transaksi.barang_jaminan;
+  document.getElementById('metode_transaksi').textContent = transaksi.metode_transaksi;
 }
 </script>
