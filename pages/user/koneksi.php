@@ -1,15 +1,14 @@
 <?php
-// koneksi.php
-$host = 'localhost'; // Nama host
-$user = 'root'; // Username database
-$password = '1234'; // Password database (kosong jika default)
-$database = 'db_sewakamera'; // Nama database
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+$dbname = "db_sewakamera";  // Gantilah dengan nama database Anda
 
 // Membuat koneksi
-$koneksi = new mysqli($host, $user, $password, $database);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Periksa koneksi
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
+// Memeriksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
 }
-?> 
+?>

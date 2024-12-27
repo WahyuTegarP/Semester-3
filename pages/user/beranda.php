@@ -9,15 +9,6 @@
           <p style="font-size: 18px;">Sebuah lokasi kecil bernama Rembangan yang terletak di dekat Kecamatan Patrang,
             Desa Baratan dan menyediakan berbagai kebutuhan produksi Anda. Ini adalah tempat yang mudah dan lengkap
             untuk menemani kegiatan produksi Anda.</p>
-          <a href="https://vimeo.com/45830194"
-            class="icon-wrap popup-vimeo d-flex align-items-center mt-4 justify-content-center">
-            <div class="icon d-flex align-items-center justify-content-center">
-              <span class="ion-ios-play"></span>
-            </div>
-            <div class="heading-title ml-5">
-              <span>Cara Mudah Menyewa Kamera & Studio</span>
-            </div>
-          </a>
         </div>
       </div>
     </div>
@@ -261,13 +252,12 @@
         <div class="carousel-testimony owl-carousel ftco-owl">
           <div class="item">
             <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_1.jpg)">
+              <div class="user-img mb-2" style="background-image: url(assets/user/images/Affan.jpeg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
-                  Consonantia, there live the blind texts.</p>
+                <p class="mb-4">Anggota tim yang melakukan survey, analilsis masalah terhadap mitra, dan membuat rancangan permasalahan mitra denga laporan hasil survey.<p>
                 <p class="name">Affan Ardiansyah</p>
-                <span class="position">Marketing Manager</span>
+                <span class="position">Survey dan analisis mitra.</span>
               </div>
             </div>
           </div>
@@ -276,32 +266,29 @@
               <div class="user-img mb-2" style="background-image: url(assets/user/images/ini_bapak.jpg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
-                  Consonantia, there live the blind texts.</p>
+                <p class="mb-4">Anggota tim yang menghandle bagian interface designer atau front-end dan membuat tampilan user dalam website.</p>
                 <p class="name">Kahfi Adam Munajad</p>
-                <span class="position">Interface Designer</span>
+                <span class="position">Interface Designer/front-end</span>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_3.jpg)">
+              <div class="user-img mb-2" style="background-image: url(assets/user/images/Tegar.jpeg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
-                  Consonantia, there live the blind texts.</p>
+                <p class="mb-4">Anggota tim yang membuat kodingan bagian admin, mulai dari fitur dashboard hingga connect ke powerBI.</p>
                 <p class="name">Tegar Prasetyo</p>
-                <span class="position">UI Designer</span>
+                <span class="position">Web Developper</span>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_1.jpg)">
+              <div class="user-img mb-2" style="background-image: url(assets/user/images/nayla.jpg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and
-                  Consonantia, there live the blind texts.</p>
+                <p class="mb-4">Tim yang terjun di bagian Database, untuk mengkonekkan data data yang akan di input oleh user maupun admin ke dalam website.</p>
                 <p class="name">Nayla Putri</p>
                 <span class="position">Database</span>
               </div>

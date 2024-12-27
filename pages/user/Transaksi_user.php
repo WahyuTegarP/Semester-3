@@ -53,80 +53,55 @@
 <body>
     <div class="container mt-5">
         <div class="card fade-in p-4">
-            <h2>Booking</h2>
+            <h2>Transaksi</h2>
             <form method="POST" enctype="multipart/form-data" action="?hal=submit">
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
-                    <input type="text" name="Nama" class="form-control" required>
+                    <input type="text" name="nama_penyewa" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Produk</label>
-                    <select name="item" class="Produk" required>
-                        <option value="Camera">Sony A7 Mark III</option>
-                        <option value="Camera">Sony A7 Mark II</    option>
-                        <option value="Camera">Sony A6400</option>
+                    <select name="item" class="nama_product" required>
+                        <option value="10">Sony A7 Mark III</option>
+                        <option value="8">Sony A7 Mark II</    option>
+                        <option value="9">Sony A6400</option>
                         <option value="Camera">Sony FX30</option>
-                        <option value="Lens">Lensa Sony 50mm FE F1.8</option>
-                        <option value="Lens">Lensa Sony 35mm E F1.8</option>
-                        <option value="Lens">Lensa Sony 28-70mm FE F3.5-5.6</option>
-                        <option value="Lens">Lensa Sony Sigma 16mm E F1.4</option>
+                        <option value="14">Lensa Sony 50mm FE F1.8</option>
+                        <option value="13">Lensa Sony 35mm E F1.8</option>
+                        <option value="12">Lensa Sony 28-70mm FE F3.5-5.6</option>
+                        <option value="16">Lensa Sony Sigma 16mm E F1.4</option>
                         <option value="Tripod">Tripod Excel</option>
-                        <option value="Accessories">Gimbal Feiyu Scorp Pro</option>
-                        <option value="Accessories">Gimbal DJI RS 3 Mini</option>
-                        <option value="Accessories">Mic Saramonic Blink 500 Putih</option>
-                        <option value="Accessories">Mic Shotgun Sony A7 Mark III</option>
-                        <option value="Accessories">Baterai Sony NP-FZ100</option>
-                        <option value="Accessories">Baterai Sony NP-FW50</option>
-                        <option value="Drone">DJI Mavic Mini 2</option>
+                        <option value="7">Gimbal Feiyu Scorp Pro</option>
+                        <option value="6">Gimbal DJI RS 3 Mini</option>
+                        <option value="3">Mic Saramonic Blink 500 Putih</option>
+                        <option value="4">Mic Shotgun Sony A7 Mark III</option>
+                        <option value="1">Baterai Sony NP-FZ100</option>
+                        <option value="2">Baterai Sony NP-FW50</option>
+                        <option value="5">DJI Mavic Mini 2</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Alamat</label>
-                    <input type="text" name="Alamat" class="form-control" required>
-                </div>
-                <div class="mb-3">
-    <label class="form-label">Tanggal Booking</label>
-    <input type="date" name="Tanggal_Booking" class="form-control" required>
+    <label class="form-label">Tanggal Transaksi</label>
+    <input type="date" name="tgl_transaksi" class="form-control" required>
 </div>
                 <div class="mb-3">
-                    <label class="form-label">Jam Booking</label>
-                    <input type="text" name="Jam_Booking" class="form-control" required>
-                </div>
-                <div class="mb-3">
-    <label class="form-label">Tanggal Kembali</label>
-    <input type="date" name="Tanggal_Kembali" class="form-control" required>
-</div>
-
-                <div class="mb-3">
-                    <label class="form-label">Jam Kembali</label>
-                    <input type="text" name="Jam_Kembali" class="form-control" required>
+                    <label class="form-label">Jam Pengembalian</label>
+                    <input type="text" name="jam_pengembalian" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Jaminan</label>
-                    <input type="text" name="Jaminan" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Banyaknya</label>
-                    <input type="number" name="Banyaknya" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Durasi Sewa</label>
-                    <select name="Durasi_Sewa" class="form-select" required>
-                        <option value="1 Hari">1 Hari</option>
-                        <option value="12 Jam">12 Jam</option>
-                        <option value="6 Jam">6 Jam</option>
-                    </select>
+                    <input type="text" name="barang_jaminan" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Metode Pembayaran</label>
-                    <select name="Metode_Pembayaran" class="form-select" required>
+                    <select name="metode_transaksi" class="form-select" required>
                         <option value="Cash">Cash</option>
                         <option value="Transfer">Transfer</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="guarantee_photo" class="form-label">Bukti Jaminan</label>
-                    <input type="file" class="form-control" id="Bukti_Jaminan" name="Bukti_Jaminan" accept="image/*" required>
+                    <input type="file" class="form-control" id="bukti_gambar" name="bukti_gambar" accept="image/*" required>
                 </div>
                 <button type="?hal=Hasil_Transaksi" class="btn btn-primary btn-animate">Submit</button>
                 <a href="?hal=beranda" class="btn btn-secondary btn-animate">Kembali</a>

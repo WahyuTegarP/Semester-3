@@ -64,67 +64,52 @@
         <div class="carousel-testimony owl-carousel ftco-owl">
           <div class="item">
             <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_1.jpg)">
+              <div class="user-img mb-2" style="background-image: url(assets/user/images/Affan.jpeg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                  there live the blind texts.</p>
-                <p class="name">Roger Scott</p>
-                <span class="position">Marketing Manager</span>
+                <p class="mb-4">Anggota tim yang melakukan survey, analilsis masalah terhadap mitra, dan membuat rancangan permasalahan mitra denga laporan hasil survey.<p>
+                <p class="name">Affan Ardiansyah</p>
+                <span class="position">Survey dan analisis mitra.</span>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_2.jpg)">
+              <div class="user-img mb-2" style="background-image: url(assets/user/images/ini_bapak.jpg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                  there live the blind texts.</p>
-                <p class="name">Roger Scott</p>
-                <span class="position">Interface Designer</span>
+                <p class="mb-4">Anggota tim yang menghandle bagian interface designer atau front-end dan membuat tampilan user dalam website.</p>
+                <p class="name">Kahfi Adam Munajad</p>
+                <span class="position">Interface Designer/front-end</span>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_3.jpg)">
+              <div class="user-img mb-2" style="background-image: url(assets/user/images/Tegar.jpeg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                  there live the blind texts.</p>
-                <p class="name">Roger Scott</p>
-                <span class="position">UI Designer</span>
+                <p class="mb-4">Anggota tim yang membuat kodingan bagian admin, mulai dari fitur dashboard hingga connect ke powerBI.</p>
+                <p class="name">Tegar Prasetyo</p>
+                <span class="position">Web Developper</span>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_1.jpg)">
+              <div class="user-img mb-2" style="background-image: url(assets/user/images/nayla.jpg)">
               </div>
               <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                  there live the blind texts.</p>
-                <p class="name">Roger Scott</p>
-                <span class="position">Web Developer</span>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimony-wrap rounded text-center py-4 pb-5">
-              <div class="user-img mb-2" style="background-image: url(assets/user/images/person_1.jpg)">
-              </div>
-              <div class="text pt-4">
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                  there live the blind texts.</p>
-                <p class="name">Roger Scott</p>
-                <span class="position">System Analyst</span>
+                <p class="mb-4">Tim yang terjun di bagian Database, untuk mengkonekkan data data yang akan di input oleh user maupun admin ke dalam website.</p>
+                <p class="name">Nayla Putri</p>
+                <span class="position">Database</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
